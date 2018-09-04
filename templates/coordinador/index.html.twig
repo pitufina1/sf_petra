@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Coordinador index{% endblock %}
+
+{% block body %}
+    <h1>Coordinador index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for coordinador in coordinadors %}
+            <tr>
+                <td>{{ coordinador.id }}</td>
+                <td>{{ coordinador.nombre }}</td>
+                <td>{{ coordinador.apellidos }}</td>
+                <td>
+                    <a href="{{ path('coordinador_show', {'id': coordinador.id}) }}">show</a>
+                    <a href="{{ path('coordinador_edit', {'id': coordinador.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('coordinador_new') }}">Create new</a>
+{% endblock %}

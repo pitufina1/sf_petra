@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "jquery": "^3.3.1",
+    "webpack-notifier": "^1.6.0"
+  },
+  "dependencies": {
+    "bootstrap": "4.*"
+  }
+}
